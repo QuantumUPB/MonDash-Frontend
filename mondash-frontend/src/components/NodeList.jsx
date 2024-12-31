@@ -45,12 +45,16 @@ const NodeList = () => {
           { app: 'App 3', percentage: 10 },
         ],
       },
+      scheduledMaintenance: [
+        { from: '202510-01T08:00:00Z', to: '2025-10-01T12:00:00Z' },
+        { from: '2025-10-05T08:00:00Z', to: '2025-10-05T12:00:00Z' },
+      ]
     },
     {
-      id: 'Arad',
-      name: 'Arad',
+      id: 'Iasi',
+      name: 'Iasi',
       kme: 'KME-2',
-      coordinates: { lat: 46.1866, long: 21.3123 },
+      coordinates: { lat: 47.1585, long: 27.6014 },
       type: 'Connection',
       status: 'Active',
       connections: [
@@ -63,6 +67,9 @@ const NodeList = () => {
           { app: 'App 1', percentage: 80 },
         ],
       },
+      scheduledMaintenance: [
+        { from: '2025-10-03T08:00:00Z', to: '2025-10-03T12:00:00Z' },
+      ]
     },
   ];
 
@@ -163,6 +170,13 @@ const NodeList = () => {
               <p><strong>KME:</strong> {node.kme}</p>
               <p><strong>Coordinates:</strong> Lat {node.coordinates.lat}, Long {node.coordinates.long}</p>
               <p><strong>Type:</strong> {node.type}</p>
+              <p><strong>Next Scheduled Maintenance:</strong>
+                {node.scheduledMaintenance.map((maintenance, index) => (
+                  <span key={index}>
+                    {maintenance.from} - {maintenance.to},&nbsp;
+                  </span>
+                ))}
+              </p>
               <h4>
                 <button
                     className="connections-toggle"

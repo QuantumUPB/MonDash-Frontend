@@ -162,3 +162,15 @@ nav li {
 .main-content h1 {
   color: #00adb5;
 }
+
+a {
+  color: #00adb5;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+  color: #00c4bd;
+  text-decoration: underline;
+}

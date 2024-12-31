@@ -1,0 +1,82 @@
+/* General container */
+.admin-user-config-container {
+    padding: 20px;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    min-height: 100vh;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Table styles */
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .user-table th, .user-table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .user-table th {
+    background-color: #2e2e40;
+    color: #ffffff;
+  }
+  
+  .user-table td input,
+  .user-table td select {
+    width: 100%;
+    padding: 5px;
+    background-color: #3a3a4d;
+    border: 1px solid #555;
+    color: #ffffff;
+    border-radius: 4px;
+  }
+  
+  .user-table td input:focus,
+  .user-table td select:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  .user-table td button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .save-btn:hover {
+    background-color: #81c784;
+  }
+  
+  .discard-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .discard-btn:hover {
+    background-color: #e57373;
+  }
+  
+  /* No changes span */
+  .user-table td span {
+    font-style: italic;
+    color: #aaa;
+  }
+  
