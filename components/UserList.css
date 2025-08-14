@@ -1,0 +1,148 @@
+/* General container */
+.admin-user-config-container {
+    padding: 20px;
+    background-color: #1e1e2f;
+    background-image: linear-gradient(rgba(30, 30, 47, 0.5), rgba(30, 30, 47, 0.5)),
+        url('/background.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    /* Scale the background image relative to the container */
+    background-size: 50%;
+    color: #ffffff;
+    min-height: 100vh;
+  }
+  
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    background: linear-gradient(90deg,#00adb5,#0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .actions {
+    margin-left: auto;
+    display: flex;
+  }
+
+  .actions button {
+    margin-left: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+
+  .register-btn {
+    background-color: #4caf50;
+    color: #fff;
+  }
+
+  .register-btn:hover {
+    background-color: #81c784;
+  }
+
+  .edit-toggle-btn {
+    background-color: #0069d9;
+    color: #fff;
+  }
+
+  .edit-toggle-btn:hover {
+    background-color: #0053ba;
+  }
+
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+    margin-left: 5px;
+  }
+
+  .delete-btn:hover {
+    background-color: #e57373;
+  }
+
+  .no-actions {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  /* Table styles */
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #2e2e40;
+    opacity: 0.9;
+  }
+  
+  .user-table th, .user-table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .user-table th {
+    background-color: #2e2e40;
+    color: #ffffff;
+  }
+  
+  .user-table td input,
+  .user-table td select {
+    width: 100%;
+    padding: 5px;
+    background-color: #3a3a4d;
+    border: 1px solid #555;
+    color: #ffffff;
+    border-radius: 4px;
+  }
+  
+  .user-table td input:focus,
+  .user-table td select:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  .user-table td button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .save-btn:hover {
+    background-color: #81c784;
+  }
+  
+  .discard-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .discard-btn:hover {
+    background-color: #e57373;
+  }
+  
+  /* No changes span */
+  .user-table td span {
+    font-style: italic;
+    color: #aaa;
+  }
+  

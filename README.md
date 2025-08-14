@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Mondash Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project now uses [Next.js](https://nextjs.org/) instead of Create React App.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm install`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installs project dependencies. If you encounter peer dependency errors, run `npm install --legacy-peer-deps` instead.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `npm run dev`
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000).
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the application for production.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Runs the built application in production mode.
 
-### `npm run eject`
+### `npm test`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Runs the Jest test suite. Make sure to install dependencies first with `npm install`. If peer dependency issues occur, you may need to run `npm install --legacy-peer-deps` instead.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Running with Docker
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+You can build and run the application inside a Docker container.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Build the image
 
-## Learn More
+```bash
+docker build -t mondash-frontend .
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Run the container
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+docker run -p 3000:80 mondash-frontend
+```
 
-### Code Splitting
+Alternatively, start it with docker compose:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+docker-compose up --build
+```
 
-### Analyzing the Bundle Size
+### Run the container in development mode
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Use the dev compose file to start a container that runs the Next.js dev server:
 
-### Making a Progressive Web App
+```bash
+docker-compose -f docker-compose.dev.yml up
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This will install dependencies and run `npm run dev`, enabling hot reloading. The app will be available at [http://localhost:3000](http://localhost:3000).
 
-### Advanced Configuration
+The frontend expects the backend to be reachable at `http://localhost:8080` by default.
+When using Docker Compose this address resolves to your host machine via an `extra_hosts` entry.
+You can override the backend URL by setting the `NEXT_PUBLIC_BACKEND_URL` environment variable.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The repository contains a `.env.template` file listing available environment variables. Copy it to `.env` and adjust values as needed. The template is also copied into the Docker image at `/env.template` for reference.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The app will then be available at [http://localhost:3000](http://localhost:3000).
