@@ -1,5 +1,10 @@
 # Mondash Frontend
 
+<p float="left">
+    <img src="upb.png" alt="University Politehnica of Bucharest" width="50"/>
+    <img src="Logo.png" alt="Quantum Team @ UPB" width="100"/>
+</p>
+
 This project now uses [Next.js](https://nextjs.org/) instead of Create React App.
 
 ## Available Scripts
